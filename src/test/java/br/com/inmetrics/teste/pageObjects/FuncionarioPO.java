@@ -66,12 +66,21 @@ public class FuncionarioPO extends GenericoPO{
 		Thread.sleep(1000);
 		campoPesquisar.sendKeys(valor);
 	}
-	      
+    
 	public void clicaNovoFuncionario() {
 		linkNovoFuncionario.click();
+	}
+	      
+	public void clicaBotaoEditar() {
+		botaoEditar.click();
     }
+    
+	public void clicaBotaoDeletar() {
+		botaoDeletar.click();
+	}
 	      
 	public void informaNome(String valor) {
+		campoNome.clear();
 		campoNome.sendKeys(valor);
 	}	  
     
@@ -108,8 +117,7 @@ public class FuncionarioPO extends GenericoPO{
 		botaoEnviar.click();
 	}
  
-	public void validarMensagemSucesso() {
-		String mensagem = "SUCESSO! Usuário cadastrado com sucesso ";
+	public void validarMensagem(String mensagem) {
 		assertTrue(mensagem.trim().toUpperCase().toString().equals(mensagemSucesso.getText().substring(0, mensagemSucesso.getText().length() - 1).trim().toUpperCase().toString()));
 	}
 }

@@ -21,18 +21,35 @@ Feature: Cadastro de funcionario
     And informar o Tipo de Contratacao "<tipoContratacao>"
     And informar a Data Adimissão "<dataAdimissao>"
     And clica em enviar
-    When demostra a mensagem de Sucesso 
+    Then demostra a mensagem "<mensagem>"
     
     Examples: 
-      | nome        | cargo 								| CPF				  | salario | sexo     | tipoContratacao | dataAdimissao |
-      | Julia Zinco | Analista de Automacao | 74931041078 | 1000000 | Feminino | CLT							| 01012020      |
+      | nome        | cargo 								| CPF				  | salario | sexo     | tipoContratacao | dataAdimissao | mensagem 															|
+      | Julia Zinco | Analista de Automacao | 74931041078 | 1000000 | Feminino | CLT						 | 01012020      |SUCESSO! Usuário cadastrado com sucesso |
        
 
   @editarFuncionario
   Scenario Outline: Login no sistema
     Given o usuario digite o nome do funcionario "<nome>" na pesquisa
-    And aparece na listagem o funcionario "<nome>"
+    When aparece na listagem o funcionario "<nome>"
+    Then clica no botao para editar
+    And informar o nome "<nomeEdicao>"
+    And clica em enviar
+    Then demostra a mensagem "<mensagem>"
 
     Examples: 
-      | nome        | cargo 								| CPF				 | salario | sexo     | tipoContratacao | dataAdimissao |
-      | Julia Zinco | Analista de Automacao | 04449459032 | 1000000 | Feminino | CLT							| 01012020      |
+      | nome        | cargo 								| CPF				  | salario | sexo     | tipoContratacao   | dataAdimissao | nomeEdicao    | mensagem 																		|
+      | Julia Zinco | Analista de Automacao | 04449459032 | 1000000 | Feminino | CLT							 | 01012020      | Julia de Rochi| SUCESSO! Informações atualizadas com sucesso |
+       
+
+  @excluirFuncionario
+  Scenario Outline: Login no sistema
+    Given o usuario digite o nome do funcionario "<nome>" na pesquisa
+    When aparece na listagem o funcionario "<nome>"
+    Then clica no botao para deletar
+    Then demostra a mensagem "<mensagem>"
+
+    Examples: 
+      | nome        | mensagem                                  |
+    	|Julia Zinco  | SUCESSO! Funcionário removido com sucesso |
+    
