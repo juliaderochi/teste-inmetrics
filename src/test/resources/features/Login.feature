@@ -1,10 +1,11 @@
-@tag
+@login
 Feature: Realizar login no sistema
   Realizar o login com um usuario já cadastrado
 
-  @tag1
+  @loginComUsuarioJaCadastrado
   Scenario Outline: Login no sistema
     Given Eu acesso o site inmrobo
+    And tenha um usuario já cadastrado
     When informo o "<usuario>"
     And informo a "<senha>"
     And clico no botao Entre
@@ -12,4 +13,4 @@ Feature: Realizar login no sistema
 
     Examples: 
       | usuario  | senha |
-      | name2    |     7 |
+      | juliader | 12345 |

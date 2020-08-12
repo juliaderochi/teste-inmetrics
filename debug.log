@@ -1,1 +1,10 @@
 [0811/214727.528:ERROR:process_info.cc(359)] UncheckedAllocate
+[0812/114037.280:ERROR:process_info.cc(359)] UncheckedAllocate
+[0812/114042.389:ERROR:process_info.cc(359)] UncheckedAllocate
+[0812/114507.783:ERROR:process_info.cc(359)] UncheckedAllocate
+[0812/114507.828:ERROR:crash_report_database_win.cc(487)] failed to truncate: A operação solicitada não pode ser executada em um arquivo com uma seção mapeada pelo usuário aberta. (0x4C8)
+[0812/114510.488:ERROR:process_info.cc(375)] NtQuerySystemInformation SystemExtendedHandleInformation: O comprimento do registro de informações especificado não coincide com o comprimento necessário à classe de informações especificada. (0xc0000004)
+[0812/114515.942:ERROR:process_info.cc(359)] UncheckedAllocate
+[0812/114613.099:ERROR:process_info.cc(359)] UncheckedAllocate
+[0812/114613.195:ERROR:process_info.cc(359)] UncheckedAllocate
+[0812/114613.235:ERROR:crash_report_database_win.cc(487)] failed to truncate: A operação solicitada não pode ser executada em um arquivo com uma seção mapeada pelo usuário aberta. (0x4C8)
