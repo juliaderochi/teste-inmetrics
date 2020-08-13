@@ -42,7 +42,7 @@ Feature: Cadastro de funcionario
       | Julia Zinco | Analista de Automacao | 04449459032 | 1000000 | Feminino | CLT							 | 01012020      | Julia de Rochi| SUCESSO! Informações atualizadas com sucesso |
        
 
-  @excluirFuncionario
+  @deletarFuncionario
   Scenario Outline: Login no sistema
     Given o usuario digite o nome do funcionario "<nome>" na pesquisa
     When aparece na listagem o funcionario "<nome>"
