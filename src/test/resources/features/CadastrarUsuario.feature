@@ -12,5 +12,5 @@ Feature: Cadastrar usuario
     Then o usuario é criado com sucesso
 
    Examples:
-      | usuario         | senha    | confirme  |
-      | camilateste1234 | teste123 | teste123  |
+      | usuario | senha    | confirme  |
+      | julia   | teste123 | teste123  |

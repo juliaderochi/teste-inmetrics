@@ -27,7 +27,7 @@ public class ChamadasApi {
 		objetoUsuario.accumulate("admissao", "01/09/2020");
 		objetoUsuario.accumulate("cargo", "479");
 		objetoUsuario.accumulate("comissao", "2.500,00");
-		objetoUsuario.accumulate("cpf", helperTestes.GetCPFValido());
+		objetoUsuario.accumulate("cpf", helperTestes.GetCPFValidoComPontuacao());
 		objetoUsuario.accumulate("departamentoId", "1");
 		objetoUsuario.accumulate("nome", "Julia Zinco");
 		objetoUsuario.accumulate("salario", "8.500,00");
@@ -86,6 +86,35 @@ public class ChamadasApi {
 
 	}
 	
+	public void DeletarUsuario(String id) {
+		String urlCadastroUsuario = "https://inm-api-test.herokuapp.com/acesso/deletar/" + id;
+		
+        given()
+	        .relaxedHTTPSValidation()
+	        .auth().basic("inmetrics", "automacao")
+	    .when()
+	        .delete(urlCadastroUsuario)
+	    .then()
+	        .statusCode(202);
+
+    	System.out.println("O usuario com Id " + id + " foi deletado");
+
+	}
+	
+	public void DeletarFuncionario(String id) {
+		String urlCadastroUsuario = "https://inm-api-test.herokuapp.com/empregado/deletar/" + id;
+		
+        given()
+	        .relaxedHTTPSValidation()
+	        .auth().basic("inmetrics", "automacao")
+	    .when()
+	        .delete(urlCadastroUsuario)
+	    .then()
+	        .statusCode(202);
+
+    	System.out.println("O usuario com Id " + id + " foi deletado");
+	}
+	
 	//1 - Cadastrar Usuario	
 	public void PostCadastraUsuario() {		
 		String urlCadastroUsuario = "https://inm-api-test.herokuapp.com/acesso/cadastrar";
@@ -117,7 +146,7 @@ public class ChamadasApi {
 	}
 
 	// 2 - Lista usuarios cadastrado passando o id
-	
+	@Test
 	public void GetUsuariosCadastradoPorID() {
 		String urListaId = "https://inm-api-test.herokuapp.com/acesso/list/" + PostCadastraUsuarioRetornaID().toString();
 	
@@ -195,7 +224,6 @@ public class ChamadasApi {
 	}
 	
 	// 5 - Alterar Empregado - realizei para verificar que a função acima estava funcionando
-	@Test
 	public void PutAlteraEmpregado() {
 		
 		acessoId = PostCadastraUsuarioRetornaID();
@@ -206,7 +234,7 @@ public class ChamadasApi {
 		objetoUsuario.accumulate("admissao", "01/09/2020");
 		objetoUsuario.accumulate("cargo", "479");
 		objetoUsuario.accumulate("comissao", "2.500,00");
-		objetoUsuario.accumulate("cpf", helperTestes.GetCPFValido());
+		objetoUsuario.accumulate("cpf", helperTestes.GetCPFValidoComPontuacao());
 		objetoUsuario.accumulate("departamentoId", "1");
 		objetoUsuario.accumulate("nome", "Julia Zinco");
 		objetoUsuario.accumulate("salario", "8.700,00");

@@ -1,6 +1,7 @@
 package br.com.inmetrics.teste.steps;
 
 import br.com.inmetrics.teste.pageObjects.GenericoPO;
+import br.com.inmetrics.teste.APIRest.HelperTestes;
 import br.com.inmetrics.teste.pageObjects.FuncionarioPO;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -28,10 +29,11 @@ public class FuncionarioSteps extends GenericoPO{
 		  
 	  }
 
-	  @And("informar o CPF \"([^\"]*)\"$")
-	  public void informaCPF(String CPF) throws Exception {
+	  @And("informar o CPF$")
+	  public void informaCPF() throws Exception {
 		  Thread.sleep(1000);
-		  funcionarioPO.informaCPF(CPF);
+		  HelperTestes helperTestes = new HelperTestes();
+		  funcionarioPO.informaCPF(helperTestes.GetCPFValidoSemPontuacao());
 		  Thread.sleep(1000);
 		  
 	  }
@@ -44,6 +46,7 @@ public class FuncionarioSteps extends GenericoPO{
 
 	  @And("informar o sexo \"([^\"]*)\"$")
 	  public void informaSexo(String sexo) throws Exception {
+		  Thread.sleep(1000);
 		  funcionarioPO.informaSexo(sexo);
 		  
 	  }
@@ -72,10 +75,17 @@ public class FuncionarioSteps extends GenericoPO{
 	  public void demonstraMensagem(String mensagem) {
 		  funcionarioPO.validarMensagem(mensagem);
 	  }
+
+	  @Given("já exista um usuario cadastrado com o nome \"([^\"]*)\"$")
+	  public void cadastraNovoUsuario(String nome) {
+		  HelperTestes helperTestes = new HelperTestes();
+		  helperTestes.PostCadastraEmpregado(nome);
+	  }  
+	  
 	  
 	  //Editar
 	  
-	  @Given("o usuario digite o nome do funcionario \"([^\"]*)\" na pesquisa$")
+	  @And("o usuario digite o nome do funcionario \"([^\"]*)\" na pesquisa$")
 	  public void digitaParaPesquisar(String nome) throws InterruptedException {
 		  funcionarioPO.digitaParaPesquisar(nome);
 	  }

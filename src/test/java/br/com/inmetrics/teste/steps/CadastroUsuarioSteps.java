@@ -1,5 +1,7 @@
 package br.com.inmetrics.teste.steps;
 
+import java.util.UUID;
+
 import br.com.inmetrics.teste.pageObjects.CadastrarUsuarioPO;
 import br.com.inmetrics.teste.pageObjects.GenericoPO;
 import cucumber.api.java.en.And;
@@ -18,7 +20,10 @@ public class CadastroUsuarioSteps extends GenericoPO{
 	  }
 	  @When("informo o campo para o \"([^\"]*)\"$")
 	  public void inserirUsuario(String usuario) {
-		  cadastrarUsuarioPO.cadastroInformaCampoUsuario(usuario);
+		  UUID uuid = UUID.randomUUID();
+		  String myRandom = uuid.toString();
+		  String user = usuario + myRandom.substring(0,5);
+		  cadastrarUsuarioPO.cadastroInformaCampoUsuario(user);
 		  
 	  }
 	  @And("informo o campo para a \"([^\"]*)\"$")

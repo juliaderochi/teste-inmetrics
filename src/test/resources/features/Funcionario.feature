@@ -11,11 +11,11 @@ Feature: Cadastro de funcionario
     And o usuario logou no sistema corretamente
 
   @cadastrarFuncionario
-  Scenario Outline: Login no sistema
+  Scenario Outline: Cadastrar Funcionario
     Given que o usuario clique em Novo Funcionario
     When informar o nome "<nome>"
     And informar o cargo "<cargo>"
-    And informar o CPF "<CPF>"
+    And informar o CPF
     And informar o salario "<salario>"
     And informar o sexo "<sexo>"
     And informar o Tipo de Contratacao "<tipoContratacao>"
@@ -24,13 +24,14 @@ Feature: Cadastro de funcionario
     Then demostra a mensagem "<mensagem>"
     
     Examples: 
-      | nome        | cargo 								| CPF				  | salario | sexo     | tipoContratacao | dataAdimissao | mensagem 															|
-      | Julia Zinco | Analista de Automacao | 27914429015 | 1000000 | Feminino | CLT						 | 01012020      |SUCESSO! Usuário cadastrado com sucesso |
+      | nome        | cargo 								| salario | sexo     | tipoContratacao | dataAdimissao | mensagem 															|
+      | Julia Zinco | Analista de Automacao | 1000000 | Feminino | CLT						 | 01012020      |SUCESSO! Usuário cadastrado com sucesso |
        
 
   @editarFuncionario
-  Scenario Outline: Login no sistema
-    Given o usuario digite o nome do funcionario "<nome>" na pesquisa
+  Scenario Outline: Editar Funcionario
+    Given já exista um usuario cadastrado com o nome "<nome>"
+    And o usuario digite o nome do funcionario "<nome>" na pesquisa
     When aparece na listagem o funcionario "<nome>"
     Then clica no botao para editar
     And informar o nome "<nomeEdicao>"
@@ -38,18 +39,19 @@ Feature: Cadastro de funcionario
     Then demostra a mensagem "<mensagem>"
 
     Examples: 
-      | nome        | cargo 								| CPF				  | salario | sexo     | tipoContratacao   | dataAdimissao | nomeEdicao    | mensagem 																		|
-      | Julia Zinco | Analista de Automacao | 04449459032 | 1000000 | Feminino | CLT							 | 01012020      | Julia de Rochi| SUCESSO! Informações atualizadas com sucesso |
+      | nome        | nomeEdicao    | mensagem 																     |
+      | Julia Zinco | Julia de Rochi| SUCESSO! Informações atualizadas com sucesso |
        
 
   @deletarFuncionario
-  Scenario Outline: Login no sistema
-    Given o usuario digite o nome do funcionario "<nome>" na pesquisa
+  Scenario Outline: Deletar funcionario
+    Given já exista um usuario cadastrado com o nome "<nome>"
+    And o usuario digite o nome do funcionario "<nome>" na pesquisa
     When aparece na listagem o funcionario "<nome>"
     Then clica no botao para deletar
     Then demostra a mensagem "<mensagem>"
 
     Examples: 
-      | nome        | mensagem                                  |
-    	|Julia Zinco  | SUCESSO! Funcionário removido com sucesso |
+      | nome         | mensagem                                  |
+    	| Julia Zinco  | SUCESSO! Funcionário removido com sucesso |
     
