@@ -116,6 +116,7 @@ public class ChamadasApi {
 	}
 	
 	//1 - Cadastrar Usuario	
+	@Test
 	public void PostCadastraUsuario() {		
 		String urlCadastroUsuario = "https://inm-api-test.herokuapp.com/acesso/cadastrar";
 		
@@ -167,6 +168,7 @@ public class ChamadasApi {
 
 	
 	// 3 - Lista todos os usuarios cadastrados
+	@Test
 	public void GetUsuariosCadastrado() {
 		
 		String urListaAll = "https://inm-api-test.herokuapp.com/acesso/list_all";
@@ -224,6 +226,7 @@ public class ChamadasApi {
 	}
 	
 	// 5 - Alterar Empregado - realizei para verificar que a função acima estava funcionando
+	@Test
 	public void PutAlteraEmpregado() {
 		
 		acessoId = PostCadastraUsuarioRetornaID();
