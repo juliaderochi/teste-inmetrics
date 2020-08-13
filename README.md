@@ -3,6 +3,12 @@
 
 Requisitos:
 
+1 - Estar com uma conexão de internet funcionando
+
+2 - Baixar o projeto na maquina local
+
+3 - Neste projeto se encontra os testes "Desafio - Website" e o "Desafio - WebService"
+
 4 - Para rodar o "Desafio - Website":
 	Na pasta "teste-inmetrics\src\test\java\br\com\inmetrics\teste\runner" se encontram 6 arquivos.
 	Para Rodar "Cadastrar usuário", rodar o arquivo "RunnerCadastrarUsuario" como Junit Test
