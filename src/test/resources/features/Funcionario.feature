@@ -25,7 +25,7 @@ Feature: Cadastro de funcionario
     
     Examples: 
       | nome        | cargo 								| CPF				  | salario | sexo     | tipoContratacao | dataAdimissao | mensagem 															|
-      | Julia Zinco | Analista de Automacao | 74931041078 | 1000000 | Feminino | CLT						 | 01012020      |SUCESSO! Usuário cadastrado com sucesso |
+      | Julia Zinco | Analista de Automacao | 27914429015 | 1000000 | Feminino | CLT						 | 01012020      |SUCESSO! Usuário cadastrado com sucesso |
        
 
   @editarFuncionario
