@@ -12,5 +12,5 @@ Feature: Realizar login no sistema
     Then o usuario logou no sistema corretamente
 
     Examples: 
-      | usuario   | senha |
-      | juliadder | 12345 |
+      | usuario  | senha |
+      | juliader | 12345 |
