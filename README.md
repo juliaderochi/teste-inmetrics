@@ -25,3 +25,6 @@ Requisitos:
 ----> 4 - PutAlteraUsuario (Alterar usuário (PUT))<br/>
 ----> 5 - PutAlteraEmpregado (Alterar Empregado (PUT))<br/>
 
+As configurações do jenkins e arquivos de evindências em HTML foram encaminhadas por e-mail e também se encontram na pasta do link abaixo:<br/>
+https://drive.google.com/drive/folders/1lHtosm-MkD3C8VE9v48v9HcSyK3kXrAs?usp=sharing
+
