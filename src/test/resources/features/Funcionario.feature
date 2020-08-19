@@ -3,8 +3,7 @@ Feature: Cadastro de funcionario
   Realizar cadastro, edição e exclusão de um funcionario
   
   Background:
-    Given Eu acesso o site inmrobo
-    And tenha um usuario já cadastrado
+    Given tenha um usuario já cadastrado
     When informo o "juliader"
     And informo a "12345"
     And clico no botao Entre

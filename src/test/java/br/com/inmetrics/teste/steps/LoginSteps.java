@@ -3,6 +3,7 @@ package br.com.inmetrics.teste.steps;
 import br.com.inmetrics.teste.pageObjects.LoginPO;
 import br.com.inmetrics.teste.pageObjects.GenericoPO;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -18,7 +19,7 @@ public class LoginSteps extends GenericoPO{
 		  loginPO.loginCampoUsuario(usuario);
 		  
 	  }
-	  @And("tenha um usuario já cadastrado$")
+	  @Given("tenha um usuario já cadastrado$")
 	  public void usuarioJaCadastrado() {
 			System.out.println("juliadr");
 	  }

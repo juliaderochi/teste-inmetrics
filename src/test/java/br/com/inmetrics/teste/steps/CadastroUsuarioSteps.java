@@ -5,6 +5,7 @@ import java.util.UUID;
 import br.com.inmetrics.teste.pageObjects.CadastrarUsuarioPO;
 import br.com.inmetrics.teste.pageObjects.GenericoPO;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -13,7 +14,7 @@ public class CadastroUsuarioSteps extends GenericoPO{
 	
 	  CadastrarUsuarioPO cadastrarUsuarioPO = new CadastrarUsuarioPO();
 	
-	  @And("clico na opção Cadastre-se para acessar a tela de cadastro$")
+	  @Given("clico na opção Cadastre-se para acessar a tela de cadastro$")
 	  public void acessarTelaCadastrese() {
 		  cadastrarUsuarioPO.acessarTelaCadastrase();
 		  

@@ -126,7 +126,7 @@ public class ChamadasApi {
 		objetoUsuario.accumulate("empregadoId", PostCadastraEmpregado());
 		objetoUsuario.accumulate("password", "12345");
 		
-        System.out.println(objetoUsuario);;
+        System.out.println(objetoUsuario);
 
 		response =        
 			given()

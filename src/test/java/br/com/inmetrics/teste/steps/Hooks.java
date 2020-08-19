@@ -1,23 +1,27 @@
 package br.com.inmetrics.teste.steps;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
-import cucumber.api.java.en.Given;
+import cucumber.api.java.Before;
 import static br.com.inmetrics.teste.support.Utils.acessarSistema;
 import static br.com.inmetrics.teste.support.Utils.driver;
 
-public class Hooks {
+import br.com.inmetrics.teste.pageObjects.GenericoPO;
+
+public class Hooks extends GenericoPO{
+	
+	@Before(order = 0)
+    public void before(Scenario cenario) {
+		acessarSistema();
+        setCenario(cenario);
+    }
 	  
-	  @Given("Eu acesso o site inmrobo$")
-	  public void acessar() {
-		  acessarSistema();
-		  
-	  }	  
-	  
-	  @After
-	  public void fechar() throws InterruptedException {
-	        if(driver != null) {
-	        	driver.close();
-	        	driver.quit();
+	 @After
+	 public void fechar() throws InterruptedException {
+		 gerarEvidencia();
+		 if(driver != null) {
+			 driver.close();
+			 driver.quit();
 	        }
 	  }
 
