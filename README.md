@@ -1,5 +1,9 @@
 ## Teste Inmetrics - Passo-a-Passo
 
+Projeto rodando no ChromeDriver 83.0.4103.39
+Para outras versões do Chrome trocar o .exe na pasta drivers do projeto.
+
+ChromeDriver Download: http://chromedriver.chromium.org/downloads
 
 Requisitos:
 
